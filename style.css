@@ -1,0 +1,242 @@
+:root
+{
+    --clr-primary-800: hsl(270, 100%, 60%);
+    --clr-primary-600: hsl(0, 0%, 60%);
+    --clr-primary-200: hsl(0, 100%, 100%);
+    --clr-error: hsl(0, 100%, 50%);
+    --fw-700: bold;
+    --ff-age-calculator: 'Poppins', sans-serif;
+}
+
+@font-face
+{
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-Regular.ttf");
+    src: url("assets/fonts/Poppins-Bold.ttf");
+    src: url("assets/fonts/Poppins-ExtraBold.ttf");
+    src: url("assets/fonts/Poppins-Italic.ttf");
+    src: url("assets/fonts/Poppins-BoldItalic.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-age-calculator);
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'], ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4, button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2, h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+.txt-clr-primary { color: var(--clr-primary-800)}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.wrapper-age-calculator
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    border-radius: 30px;
+    border-bottom-right-radius: 200px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.input-section
+{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-wrapper
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-section p
+{
+    justify-self: flex-end;
+    align-self: start;
+}
+
+.input-section input
+{
+    max-width: 200px;
+    height: 80px;
+    font-size: 2.5rem;
+    text-align: center;
+    border: 1px solid var(--clr-primary-800);
+    border-radius: 8px;
+}
+
+.error-message
+{
+    align-self: center;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--clr-error);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+}
+
+.arrow-section
+{
+    margin-bottom: 2rem;
+}
+
+.arrow-section hr
+{
+    margin-top: 5rem;
+    position: relative;
+    width: 600px;
+}
+
+.arrow-section img
+{
+    position: absolute;
+    padding: 20px;
+    top: 29%;
+    right: 10%;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--clr-primary-800);
+    transition: .3s ease;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.arrow-section img:hover
+{
+    background-color: black;
+    transition: .3s ease-in-out;
+}
+
+.arrow-section img:active
+{
+    background-color: hsl(0, 0%, 50%);
+    transition: 0s ease-in-out;
+}
+
+.output-section h1
+{
+    display: flex;
+    font-size: 4rem;
+    margin: 1rem 0;
+    gap: 2rem;
+}
+
+@media (max-width: 768px)
+{
+    .wrapper-age-calculator
+    {
+        max-width: 350px;
+    }
+    .input-section input
+    {
+        max-width: 100px;
+        font-size: 1.2rem;
+    }
+    .error-message
+    {
+        font-size: .1rem;
+    }
+    .arrow-section hr
+    {
+        width: 300px;
+    }
+
+    .arrow-section img
+    {
+        right: 5%;
+        top: 35%;
+        width: 5rem;
+    }
+    .output-section h1
+    {
+        font-size: 2.2rem;
+    }
+}
