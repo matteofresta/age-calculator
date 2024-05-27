@@ -94,6 +94,8 @@ textarea:not([rows]) {
 
 .txt-clr-primary { color: var(--clr-primary-800)}
 
+/* === CSS Styling === */
+
 body
 {
     display: flex;
